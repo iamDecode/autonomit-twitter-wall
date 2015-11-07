@@ -125,11 +125,15 @@
         font-size: 100%;
         max-height: 100px;
         opacity: 1;
+        display: none;
+      }
+
+      #programme div.animate {
         -webkit-transition: all 0.75s ease-in-out;
         transition: all 0.75s ease-in-out;
       }
 
-      #programme div.slideOut {
+      #programme div.animate.slideOut {
         max-height: 0px;
         margin-bottom: 0px;
         padding-top: 0px;
@@ -239,12 +243,23 @@
 
         $('#programme div').each(function(i, elem){
           var time = $(elem).find('label').text();
+
+          //in case event is already passed, remove it
           if (currentTime > time){
-            $(elem).addClass('slideOut');
-            setTimeout(function(){$(elem).remove()}, 750);
+            if($(this).hasClass('animate')) {
+              $(elem).addClass('slideOut');
+              setTimeout(function () {$(elem).remove()}, 750);
+            } else {
+              $(elem).remove();
+            }
+          } else {
+            $(elem).show('in time');
           }
         });
 
+        if (!$('#programme div').hasClass('animate')){
+          $('#programme div').addClass('animate');
+        }
         setTimeout(updateProgramme, 1000);
       }
 
