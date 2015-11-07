@@ -33,7 +33,7 @@ stream.on('tweet', function(tweet) {
   // Ignore RT's and potentially scandalous content
   if(tweet["possibly_sensitive"] || tweet["retweeted"]) { return; }
   io.emit('tweet', tweet);
-  client.rpush("confurrent:nejsconf", JSON.stringify(tweet));
+  client.rpush("confurrent:autonomit", JSON.stringify(tweet));
 });
 
 stream.on('disconnect', function(reason) {
@@ -49,7 +49,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/recent.json', function (req, res) {
-  client.lrange("confurrent:nejsconf", -11, -1, function (error, tweets) {
+  client.lrange("confurrent:autonomit", -11, -1, function (error, tweets) {
     res.json({tweets: tweets});
   });
 });

@@ -1,48 +1,278 @@
 <!doctype html>
 <html>
   <head>
-    <title>#NEJSCONF</title>
+    <title>#AutonomIT</title>
     <style>
-      * {
-        background-color: #e9ca20;
+      @font-face {
+        font-family: 'jaapokkiregular';
+        src: url('https://autonom.it/fonts/jaapokki-regular-webfont.eot');
+        src: url('https://autonom.it/fonts/jaapokki-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://autonom.it/fonts/jaapokki-regular-webfont.woff2') format('woff2'),
+        url('https://autonom.it/fonts/jaapokki-regular-webfont.woff') format('woff'),
+        url('https://autonom.it/fonts/jaapokki-regular-webfont.ttf') format('truetype'),
+        url('https://autonom.it/fonts/jaapokki-regular-webfont.svg#jaapokkiregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+      html {height: 100%;}
+      body {
+          font-family: 'Open Sans', sans-serif;
+          height: 100%;
+          margin: 0px;
+          overflow: hidden;
+      }
+      #programme {
+          float: left;
+          width: 43%;
+          box-sizing: border-box;
+          padding: 0 20px;
+      }
+      #programme::after {
+        content: '';
+        background-image: linear-gradient(5deg, #fff 15%,  rgba(255,255,255,0) 80%);
+        position: absolute;
+        display: block;
+        top: 20%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      h1 {
+        font-family: 'jaapokkiregular', sans-serif;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: #2f63c6;
+        margin-bottom: 27px;
+      }
+      h1 span {
+        color: #ccc;
+      }
+      #messages {
+          padding: 20px;
+          height: 100%;
+          width: 57%;
+          box-sizing: border-box;
+          float: right;
+          background-image: linear-gradient(45deg, #523fda 0, #2f63c6 40%, #0d90b1);
+          position: relative;
+      }
+      #messages::after {
+          content: '';
+          background-image: linear-gradient(5deg, #434eda 3%, rgba(65, 90, 198, 0) 70%);
+          position: absolute;
+          display: block;
+          top: 50%;
+          bottom: 0;
+          left: 0;
+          right: 0;
       }
       img.avatar {
         float: left;
         margin: 0 10px;
       }
+      div.tweet:first-of-type {
+          font-size: 30px;
+          margin: -10px 0 10px 0 !important;
+      }
+      div.tweet span.body {
+          color: #bcd7ff;
+      }
+      div.tweet:first-of-type span.body {
+          color: #fff;
+      }
       div.tweet {
-        margin: 10px 0;
+        padding-top: 0px;
+        color: #fff;
+        max-height: 0px;
+        opacity: 0;
+        overflow: hidden;
+        float: left;
+        clear: both;
+        font-size: 19px;
+        -webkit-transition: all 0.75s ease-in-out;
+        transition: all 0.75s ease-in-out;
+        -webkit-animation: slide 1.5s forwards;
+        animation: slide 1.5s forwards;
+      }
+      @-webkit-keyframes slide {
+          50% { opacity: 0; max-height: 170px;  padding-top: 30px; }
+          100% { opacity: 1; max-height: 170px;  padding-top: 30px; }
+      }
+
+      @keyframes slide {
+          50% { opacity: 0; max-height: 170px; padding-top: 30px; }
+          100% { opacity: 1; max-height: 170px;  padding-top: 30px; }
       }
       div.clear {
         clear: both;
       }
+
+      footer {
+        font-size: 20px;
+        position: absolute;
+        bottom: 20px;
+        right: calc(57% + 20px);
+        color: #2f63c6;
+        -webkit-transform: rotate(-1deg);
+        transform: rotate(-1deg);
+        z-index: 99;
+      }
+
+      #programme div {
+        background: #f4f4f4;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        font-size: 100%;
+        max-height: 100px;
+        opacity: 1;
+        -webkit-transition: all 0.75s ease-in-out;
+        transition: all 0.75s ease-in-out;
+      }
+
+      #programme div.slideOut {
+        max-height: 0px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        opacity: 0;
+      }
+
+      #programme div > label {
+        color: #999;
+        text-transform: uppercase;
+        font-size: 1.5em;
+      }
+
+      #programme div > h2 {
+        color: #2f63c6;
+        font-size: 2.5em;
+        margin: -10px 0 0 0;
+      }
+
+      #programme div:first-of-type {
+        background: #2f63c6;
+        position: relative;
+        z-index: 99;
+      }
+      #programme div:first-of-type > * {
+        color: #fff;
+      }
     </style>
   </head>
   <body>
+    <div id="programme">
+      <h1>AutonomIT <span>| day schedule</span></h1>
+
+
+      <div>
+        <label>10:30</label>
+        <h2>Arrival</h2>
+      </div>
+
+      <div>
+        <label>11:30</label>
+        <h2>Opening</h2>
+      </div>
+
+      <div>
+        <label>11:45</label>
+        <h2>Opening talk</h2>
+      </div>
+
+      <div>
+        <label>12:45</label>
+        <h2>First parallel session</h2>
+      </div>
+
+      <div>
+        <label>13:30</label>
+        <h2>Lunch</h2>
+      </div>
+
+      <div>
+        <label>14:30</label>
+        <h2>Second parallel session</h2>
+      </div>
+
+      <div>
+        <label>15:30</label>
+        <h2>Third parallel session</h2>
+      </div>
+
+      <div>
+        <label>16:30</label>
+        <h2>Final talk</h2>
+      </div>
+
+      <div>
+        <label>17:15</label>
+        <h2>Closing</h2>
+      </div>
+
+      <div>
+        <label>17:30</label>
+        <h2>Drinks</h2>
+      </div>
+
+      <div>
+        <label>18:30</label>
+        <h2>Dinner</h2>
+      </div>
+
+      <div>
+        <label>20:00</label>
+        <h2>Departure</h2>
+      </div>
+
+      <footer>Tweet with <i>#</i><b>AutonomIT</b> to be featured! &rarr;</footer>
+    </div>
+
     <div id="messages"></div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700" rel="stylesheet" type="text/css">
     <script>
-      $(function () {
-          var $messages = $("#messages");
+      function updateProgramme(){
+        var time = new Date(Date.now());
+        var currentTime = ("0" + time.getHours()).slice(-2)  + ":" +
+            ("0" + time.getMinutes()).slice(-2);
 
-          function prependTweet (tweet) {
-            var tweetDiv = $("<div/>").addClass("tweet");
-            tweetDiv.append($("<span/>").addClass("body").text(tweet["text"]));
-            tweetDiv.prepend($("<img/>").addClass("avatar").attr("src", tweet["user"]["profile_image_url"]));
-            tweetDiv.append($("<div/>").addClass("clear"));
-            $messages.prepend(tweetDiv);
+        $('#programme div').each(function(i, elem){
+          var time = $(elem).find('label').text();
+          if (currentTime > time){
+            $(elem).addClass('slideOut');
+            setTimeout(function(){$(elem).remove()}, 750);
           }
-          
-          $.getJSON("/recent.json", function (obj) {
-            obj["tweets"].forEach(function (j) { prependTweet(JSON.parse(j)); });
-          });
+        });
 
-          var socket = io();
-          socket.on('tweet', function(msg){
-            console.log(msg);
-            prependTweet(msg);
-          });
+        setTimeout(updateProgramme, 1000);
+      }
+
+      $(function () {
+        var $messages = $("#messages");
+        var NUM_MSG = 10;
+        function prependTweet (tweet) {
+          var tweetDiv = $("<div/>").addClass("tweet");
+          tweetDiv.append($("<span/>").addClass("body").text(tweet["text"]));
+          tweetDiv.prepend($("<img/>").addClass("avatar").attr("src", tweet["user"]["profile_image_url"]));
+          tweetDiv.append($("<div/>").addClass("clear"));
+          $messages.prepend(tweetDiv);
+
+          if($messages.children().length > NUM_MSG){
+            $messages.children().last().remove();
+          }
+        }
+
+        $.getJSON("/recent.json", function (obj) {
+          obj["tweets"].forEach(function (j) { prependTweet(JSON.parse(j)); });
+        });
+
+        var socket = io();
+        socket.on('tweet', function(msg){
+          prependTweet(msg);
+        });
+
+        updateProgramme();
       });
     </script>
   </body>

@@ -1,12 +1,12 @@
 {
-  "name": "nejsconf-twitter-wall",
+  "name": "autonomit-twitter-wall",
   "version": "1.0.0",
-  "description": "Tweetwall for NEJS Conference",
+  "description": "Tweetwall for AutonomIT symposium",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "John Hobbs <john@velvetcache.org>",
+  "author": "Dennis Collaris <d.collaris@me.com>",
   "license": "",
   "dependencies": {
     "express": "^4.12.3",

@@ -1,0 +1,11 @@
+node_modules
+config.json
+config.js
+*.sublime-project
+*.sublime-workspace
+*.swp
+.psci_modules
+public/css/*.min.css
+public/js/*.min.js
+dump.rdb
+npm-debug.log
