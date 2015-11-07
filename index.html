@@ -76,14 +76,19 @@
       }
       div.tweet span.body {
           color: #bcd7ff;
+          position: relative;
+          top: -5px;
       }
       div.tweet:first-of-type span.body {
           color: #fff;
-          position: relative;
-          top: -10px;
       }
       div.tweet:first-of-type img.avatar {
         width: 70px;
+      }
+
+      div.tweet img.avatar {
+        border-radius: 5px;
+        width: 50px;
       }
       div.tweet {
         padding-top: 0px;
@@ -272,9 +277,10 @@
         var $messages = $("#messages");
         var NUM_MSG = 10;
         function prependTweet (tweet) {
+          console.log(tweet);
           var tweetDiv = $("<div/>").addClass("tweet");
           tweetDiv.append($("<span/>").addClass("body").text(tweet["text"]));
-          tweetDiv.prepend($("<img/>").addClass("avatar").attr("src", tweet["user"]["profile_image_url"]));
+          tweetDiv.prepend($("<img/>").addClass("avatar").attr("src", tweet["user"]["profile_image_url"].replace('_normal','_bigger')));
           tweetDiv.append($("<div/>").addClass("clear"));
           $messages.prepend(tweetDiv);
 
