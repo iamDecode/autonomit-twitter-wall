@@ -14,7 +14,7 @@
         font-weight: normal;
         font-style: normal;
       }
-      html {height: 100%;}
+      html { height: 100%; }
       body {
           font-family: 'Open Sans', sans-serif;
           height: 100%;
@@ -179,7 +179,7 @@
 
       #programme div > h2 {
         color: #2f63c6;
-        font-size: 2.5em;
+        font-size: 2.4em;
         margin: -10px 0 0 0;
       }
 
@@ -272,7 +272,7 @@
             ("0" + time.getMinutes()).slice(-2);
 
         $('#programme div').each(function(i, elem){
-          var time = $(elem).find('label').text();
+          var time = $(elem).next().find('label').text();
 
           //in case event is already passed, remove it
           if (currentTime > time){
@@ -297,7 +297,6 @@
         var $messages = $("#messages");
         var NUM_MSG = 10;
         function prependTweet (tweet) {
-          console.log(tweet);
           var tweetDiv = $("<div/>").addClass("tweet");
           tweetDiv.append($("<span/>").addClass("body").text(tweet["text"]));
           tweetDiv.prepend($("<img/>").addClass("avatar").attr("src", tweet["user"]["profile_image_url"].replace('_normal','_bigger')));
