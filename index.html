@@ -99,10 +99,20 @@
         float: left;
         clear: both;
         font-size: 125%;
-        -webkit-transition: all 0.75s ease-in-out;
-        transition: all 0.75s ease-in-out;
-        -webkit-animation: slide 1.5s forwards;
-        animation: slide 1.5s forwards;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-animation: slide 1s forwards;
+        animation: slide 1s forwards;
+
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
       }
       @-webkit-keyframes slide {
           50% { opacity: 0; max-height: 170px;  padding-top: 30px; }
@@ -141,6 +151,16 @@
       #programme div.animate {
         -webkit-transition: all 0.75s ease-in-out;
         transition: all 0.75s ease-in-out;
+
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
       }
 
       #programme div.animate.slideOut {
