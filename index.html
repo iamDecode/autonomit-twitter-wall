@@ -145,7 +145,7 @@
         padding: 10px 20px;
         margin-bottom: 20px;
         font-size: 100%;
-        max-height: 100px;
+        max-height: 190px;
         opacity: 1;
         display: none;
       }
@@ -193,6 +193,28 @@
       #programme div:first-of-type > * {
         color: #fff;
       }
+
+      #programme span.talk h2 {
+        font-size: 26px;
+        margin: 48px 0 0 0;
+      }
+      #programme span.talk h2:first-child {
+        margin-top: 3px;
+      }
+      #programme span.talk p {
+        margin: 0;
+        float:right;
+        font-size: 20px;
+        font-weight: normal;
+      }
+      #programme span.talk h2 + p {
+        font-style: italic;
+        float: left;
+      }
+
+      #programme div:first-of-type span.talk h2 + p {
+        color: rgb(188, 215, 255);
+      }
     </style>
   </head>
   <body>
@@ -212,12 +234,22 @@
 
       <div>
         <label>11:45</label>
-        <h2>Opening talk</h2>
+        <h2>Openingslezing</h2>
       </div>
 
       <div>
         <label>12:45</label>
-        <h2>First parallel session</h2>
+        <h2><span class="talk">
+          <h2>Sensored data</h2>
+          <p>Prof.mr.dr. Jan Smits</p>
+          <p>Philips Hall</p>
+
+          <h2>Optimize your world</h2>
+          <p>Laurenz Eveleens</p>
+          <p>Jupiter-Nepture room</p>
+
+          <br clear="all">
+        </span></h2>
       </div>
 
       <div>
@@ -227,12 +259,32 @@
 
       <div>
         <label>14:30</label>
-        <h2>Second parallel session</h2>
+        <h2><span class="talk">
+          <h2>Applications of machine learning</h2>
+          <p>Mark Bakker</p>
+          <p>Philips Hall</p>
+
+          <h2>From idea to autonomous product</h2>
+          <p>Emile Nijssen</p>
+          <p>Jupiter-Nepture room</p>
+
+          <br clear="all">
+        </span></h2>
       </div>
 
       <div>
         <label>15:30</label>
-        <h2>Third parallel session</h2>
+        <h2><span class="talk">
+          <h2>Where am I? Make a decision!</h2>
+          <p>Gert-Jan van Rootselaar</p>
+          <p>Philips Hall</p>
+
+          <h2>Quis automatiet ipsos automates?</h2>
+          <p>Martijn Dashorst</p>
+          <p>Jupiter-Nepture room</p>
+
+          <br clear="all">
+        </span></h2>
       </div>
 
       <div>
@@ -258,6 +310,7 @@
       <div>
         <label>20:00</label>
         <h2>Departure</h2>
+        </span>
       </div>
 
       <footer>Tweet with <i>#</i><b>AutonomIT</b> to be featured! &rarr;</footer>
@@ -270,7 +323,7 @@
     <script>
       function updateProgramme(){
         var time = new Date(Date.now());
-        var currentTime = ("0" + time.getHours()).slice(-2)  + ":" +
+        var currentTime = ("0" + (time.getHours())).slice(-2)  + ":" +
             ("0" + time.getMinutes()).slice(-2);
 
         $('#programme div').each(function(i, elem){
