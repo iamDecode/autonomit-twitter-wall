@@ -2,6 +2,7 @@ var util = require('util'),
    redis = require("redis"),
   config = require('./config');
   client = redis.createClient(config.redis.port, config.redis.host, {auth_pass: config.redis.password}),
+  client2 = redis.createClient(config.redis.port, config.redis.host, {auth_pass: config.redis.password}),
      app = require('express')(),
     http = require('http').Server(app),
       io = require('socket.io')(http);
@@ -36,6 +37,12 @@ stream.on('tweet', function(tweet) {
   io.emit('tweet', tweet);
   client.rpush("confurrent:autonomit", JSON.stringify(tweet));
 });
+
+client2.on('message', function(channel, message){
+  io.emit('reload', true);
+});
+
+client2.subscribe('reload');
 
 stream.on('disconnect', function(reason) {
   if(reconnectSentinel && reason == 'abort') {

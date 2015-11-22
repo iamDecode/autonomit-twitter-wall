@@ -322,6 +322,10 @@
           prependTweet(msg);
         });
 
+        socket.on('reload', function(msg){
+          window.location.reload();
+        });
+
         updateProgramme();
       });
     </script>
