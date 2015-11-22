@@ -10,6 +10,9 @@ module.exports = {
       track: "nejsconf"
     }
   },
+  redis: {
+    password: 'REDIS-PASSWORD'
+  },
   server: {
     port: 3000
   }

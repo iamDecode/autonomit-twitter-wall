@@ -1,10 +1,11 @@
 var util = require('util'),
    redis = require("redis"),
-  client = redis.createClient(),
+  config = require('./config');
+  client = redis.createClient({auth_pass: config.redis.password}),
      app = require('express')(),
     http = require('http').Server(app),
-      io = require('socket.io')(http),
-  config = require('./config');
+      io = require('socket.io')(http);
+
 
 var twitter = new (require('twitter-streamer'))(config.twitter);
 
