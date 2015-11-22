@@ -11,7 +11,8 @@ module.exports = {
     }
   },
   redis: {
-    password: 'REDIS-PASSWORD'
+    password: 'REDIS-PASSWORD',
+    port: 6379
   },
   server: {
     port: 3000

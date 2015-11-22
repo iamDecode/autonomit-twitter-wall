@@ -1,7 +1,7 @@
 var util = require('util'),
    redis = require("redis"),
   config = require('./config');
-  client = redis.createClient({auth_pass: config.redis.password}),
+  client = redis.createClient({auth_pass: config.redis.password, port: config.redis.port}),
      app = require('express')(),
     http = require('http').Server(app),
       io = require('socket.io')(http);
