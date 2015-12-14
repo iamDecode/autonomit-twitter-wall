@@ -352,6 +352,9 @@
         var $messages = $("#messages");
         var NUM_MSG = 10;
         function prependTweet (tweet) {
+	  if(tweet.user.id_str == "4256394101" || tweet.user.id_str == "4256439143" || tweet.user.id_str == "4256532076" || tweet.user.id_str == "3264330311"){
+          	return;
+          }
           console.log(tweet);
           var tweetDiv = $("<div/>").addClass("tweet");
           var body = $("<span/>").addClass("body"); tweetDiv.append(body);
@@ -367,12 +370,18 @@
         }
 
         $.getJSON("/recent.json", function (obj) {
-          obj["tweets"].forEach(function (j) { prependTweet(JSON.parse(j)); });
+          obj["tweets"].forEach(function (j) { 
+            //if(JSON.parse(j).user.id_str != '4256394101' && JSON.parse(j).user.id_str != "4256439143") {
+              prependTweet(JSON.parse(j));
+            //} 
+          });
         });
 
         var socket = io();
         socket.on('tweet', function(msg){
-          prependTweet(msg);
+          //if(msg.user.id_str != "4256394101" && msg.user.id_str != "4256439143") {
+            prependTweet(msg);
+          //}
         });
 
         socket.on('reload', function(msg){
